@@ -2,12 +2,13 @@ import React from 'react'
 import './UsersList.css'
 
 import UserItem from './UserItem'
+import Card from '../../shared/components/UI/Card'
 
 const UsersList = props => {
     const listOfUser = props.items.length === 0 ?
-        <div className="center">
+        <Card className="center">
             <h2>No users found.</h2>
-        </div> :
+        </Card> :
 
         <ul className="users-list">
             {props.items.map(user => (
