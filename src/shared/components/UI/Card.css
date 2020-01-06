@@ -1,9 +1,0 @@
-.card {
-  position: relative;
-  margin: 0;
-  box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  overflow: hidden;
-  background: white;
-  padding: 1rem;
-}
