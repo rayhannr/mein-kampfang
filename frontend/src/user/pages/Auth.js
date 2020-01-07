@@ -57,8 +57,8 @@ const Auth = () => {
                     password: formState.inputs.password.value
                 }),
                 {'Content-Type': 'application/json'}
-            ).then(() => {
-                auth.login()
+            ).then((responseData) => {
+                auth.login(responseData.user.id)
             })
         } else {
             sendRequest(
@@ -70,8 +70,8 @@ const Auth = () => {
                     password: formState.inputs.password.value
                 }),
                 {'Content-Type': 'application/json'}
-            ).then(() => {
-                auth.login()
+            ).then((responseData) => {
+                auth.login(responseData.user.id)
             })
         }
     }

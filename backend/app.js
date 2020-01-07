@@ -34,7 +34,7 @@ app.use((error, req, res, next) => {
 })
 
 mongoose
-  .connect(`mongodb+srv://rayhannr:s5c6uGdf2NxnXnHT@cluster0-f1yfj.mongodb.net/mern?retryWrites=true&w=majority`)
+  .connect(`mongodb+srv://rayhannr:LW19I61h10NOffbJ@cluster0-f1yfj.mongodb.net/mern?retryWrites=true&w=majority`)
   .then(() => {
     app.listen(5000)
   })
