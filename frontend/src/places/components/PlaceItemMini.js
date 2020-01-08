@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import './UserItem.css'
 
 import Avatar from '../../shared/components/UI/Avatar'
 import Card from '../../shared/components/UI/Card'
@@ -8,13 +7,12 @@ import Card from '../../shared/components/UI/Card'
 const UserItem = props => (
     <li className="user-item">
         <Card className="user-item__content" style={{padding: 0}}>
-            <Link to={`/${props.id}/places`}>
+            <Link to={`/places/item/${props.id}`}>
                 <div className="user-item__image">
-                    <Avatar image={`http://localhost:5000/${props.image}`} alt={props.name} />
+                    <Avatar image={`http://localhost:5000/${props.image}`} alt={props.title} />
                 </div>
                 <div className="user-item__info">
-                    <h3>{props.name}</h3>
-                    <h4>{props.placeCount} {props.placeCount <= 1 ? 'Place' : 'Places'} </h4>
+                    <h3 style={{margin: 0}}>{props.title}</h3>
                 </div>
             </Link>
         </Card>

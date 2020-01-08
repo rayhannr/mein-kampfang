@@ -25,7 +25,11 @@ const PlaceItem = props => {
         setShowConfirmModal(false)
         sendRequest(
             `http://localhost:5000/api/places/${props.id}`,
-            'DELETE'
+            'DELETE',
+            null,
+            {
+                Authorization: `Bearer ${auth.token}`
+            }
         ).then(() => {
             props.onDelete(props.id)
         })
@@ -66,8 +70,10 @@ const PlaceItem = props => {
                         <img src={`http://localhost:5000/${props.image}`} alt={props.title} />
                     </div>
                     <div className="place-item__info">
-                        <h2>{props.title}</h2>
-                        <h3>{props.address}</h3>
+                        <h1>{props.title}</h1>
+                        <p className="info-title">Address</p>
+                        <p>{props.address}</p>
+                        <p className="info-title">Description</p>
                         <p>{props.description}</p>
                     </div>
                     <div className="place-item__actions">

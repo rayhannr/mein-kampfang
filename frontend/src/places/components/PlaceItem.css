@@ -8,7 +8,19 @@
 
 .place-item__info {
   padding: 1rem;
+}
+
+.place-item__info h1{
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 1rem
+}
+
+.place-item__info .info-title{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-family: 'Circular Std Bold';
 }
 
 .place-item__image {
@@ -31,7 +43,7 @@
 
 .place-item__actions {
   padding: 1rem;
-  text-align: center;
+  text-align: right;
   border-top: 1px solid #ccc;
 }
 

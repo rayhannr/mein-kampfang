@@ -64,7 +64,7 @@ const Auth = () => {
                 }),
                 {'Content-Type': 'application/json'}
             ).then((responseData) => {
-                auth.login(responseData.user.id)
+                auth.login(responseData.userId, responseData.token)
             })
         } else {
             const formData = new FormData()
@@ -77,7 +77,7 @@ const Auth = () => {
                 'POST',
                 formData
             ).then((responseData) => {
-                auth.login(responseData.user.id)
+                auth.login(responseData.userId, responseData.token)
             })
         }
     }
