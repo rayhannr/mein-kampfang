@@ -1,0 +1,5 @@
+backend/uploads/images/
+*.jpg
+*.png
+*jpeg
+backend/nodemon.json
