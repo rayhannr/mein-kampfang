@@ -5,6 +5,7 @@ import {VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH} from '../../shared/util/validato
 
 import Input from '../../shared/components/Form/Input'
 import Button from '../../shared/components/Form/Button'
+import ImageUpload from '../../shared/components/Form/ImageUpload'
 import ErrorModal from '../../shared/components/UI/ErrorModal'
 import LoadingSpinner from '../../shared/components/UI/LoadingSpinner'
 
@@ -27,6 +28,10 @@ const NewPlace = () => {
         address: {
             value: '',
             isValid: false
+        },
+        image: {
+            value: null,
+            isValid: false
         }
     }, false)
 
@@ -34,16 +39,17 @@ const NewPlace = () => {
 
     const submitPlace = event => {
         event.preventDefault()
+        const formData = new FormData()
+        formData.append('title', formState.inputs.title.value)
+        formData.append('description', formState.inputs.description.value)
+        formData.append('address', formState.inputs.address.value)
+        formData.append('creator', auth.userId)
+        formData.append('image', formState.inputs.image.value)
+
         sendRequest(
             'http://localhost:5000/api/places',
             'POST',
-            JSON.stringify({
-                title: formState.inputs.title.value,
-                description: formState.inputs.description.value,
-                address: formState.inputs.address.value,
-                creator: auth.userId
-            }),
-            {'Content-Type': 'application/json'}
+            formData
         ).then(() => {
             history.push('/')
         })
@@ -76,6 +82,7 @@ const NewPlace = () => {
                     errorText="Please enter a valid description address."
                     validators={[VALIDATOR_REQUIRE()]}
                     onInput={inputHandler} />
+                <ImageUpload id="image" onInput={inputHandler} errorText="Please provide an image." />
                 <Button type="submit" disabled={!formState.isValid}>Add Place</Button>
             </form>
         </React.Fragment>

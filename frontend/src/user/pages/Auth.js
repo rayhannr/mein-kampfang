@@ -2,10 +2,11 @@ import React, {useState, useContext} from 'react'
 import './Auth.css'
 
 import Card from '../../shared/components/UI/Card'
-import Input from '../../shared/components/Form/Input'
-import Button from '../../shared/components/Form/Button'
 import ErrorModal from '../../shared/components/UI/ErrorModal'
 import LoadingSpinner from '../../shared/components/UI/LoadingSpinner'
+import Input from '../../shared/components/Form/Input'
+import Button from '../../shared/components/Form/Button'
+import ImageUpload from '../../shared/components/Form/ImageUpload'
 
 import {VALIDATOR_EMAIL, VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE} from '../../shared/util/validators'
 import {useForm} from '../../shared/hooks/form-hook'
@@ -32,13 +33,18 @@ const Auth = () => {
         if(!isLogin){
             setFormData({
                 ...formState.inputs,
-                name: undefined
+                name: undefined,
+                image: undefined
             }, formState.inputs.email.isValid && formState.inputs.password.isValid)
         } else {
             setFormData({
                 ...formState.inputs,
                 name: {
                     value: '',
+                    isValid: false
+                },
+                image: {
+                    value: null,
                     isValid: false
                 }
             }, false)
@@ -61,15 +67,15 @@ const Auth = () => {
                 auth.login(responseData.user.id)
             })
         } else {
+            const formData = new FormData()
+            formData.append('name', formState.inputs.name.value)
+            formData.append('email', formState.inputs.email.value)
+            formData.append('password', formState.inputs.password.value)
+            formData.append('image', formState.inputs.image.value)
             sendRequest(
                 'http://localhost:5000/api/users/signup',
                 'POST',
-                JSON.stringify({
-                    name: formState.inputs.name.value,
-                    email: formState.inputs.email.value,
-                    password: formState.inputs.password.value
-                }),
-                {'Content-Type': 'application/json'}
+                formData
             ).then((responseData) => {
                 auth.login(responseData.user.id)
             })
@@ -94,6 +100,7 @@ const Auth = () => {
                             errorText="Please enter a name"
                             onInput={inputHandler} />
                     }
+                    {!isLogin && <ImageUpload center id="image" onInput={inputHandler} errorText="Please provide an image." />}
                     <Input 
                         element="input" 
                         id="email" 
