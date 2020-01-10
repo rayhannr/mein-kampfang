@@ -9,10 +9,10 @@ const UserItem = props => (
         <Card className="user-item__content" style={{padding: 0}}>
             <Link to={`/places/item/${props.id}`}>
                 <div className="user-item__image">
-                    <Avatar image={`http://localhost:5000/${props.image}`} alt={props.title} />
+                    <Avatar image={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt={props.title} />
                 </div>
                 <div className="user-item__info">
-                    <h3 style={{margin: 0}}>{props.title}</h3>
+                    <h3 style={{margin: 0}}>{props.title.length < 36 ? props.title : `${props.title.substring(0, Math.floor(props.title.length/2))}...` }</h3>
                 </div>
             </Link>
         </Card>

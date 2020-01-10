@@ -10,8 +10,12 @@ const Places = () => {
     const [loadedPlaces, setLoadedPlaces] = useState()
 
     useEffect(() => {
+        document.title = "Mein Kampfang - All Places"
+    }, [])
+
+    useEffect(() => {
         const fetchPlaces = () => {
-            sendRequest('http://localhost:5000/api/places').then((responseData) => {
+            sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places`).then((responseData) => {
                 setLoadedPlaces(responseData.places)
             })
         }

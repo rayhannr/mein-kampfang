@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import './PlaceForm.css'
 import {VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH} from '../../shared/util/validators'
@@ -37,21 +37,25 @@ const NewPlace = () => {
 
     const history = useHistory()
 
+    useEffect(() => {
+        document.title = "Mein Kampfang - New Place"
+    }, [])
+
     const submitPlace = event => {
         event.preventDefault()
         const formData = new FormData()
         formData.append('title', formState.inputs.title.value)
-        formData.append('description', formState.inputs.description.value)
+        formData.append('description', formState.inputs.description.value.split('\n').filter(desc => desc !== "").map(des => des + '/29omaewa'))
         formData.append('address', formState.inputs.address.value)
         formData.append('image', formState.inputs.image.value)
 
         sendRequest(
-            'http://localhost:5000/api/places',
+            `${process.env.REACT_APP_BACKEND_URL}/places`,
             'POST',
             formData,
             {Authorization: `Bearer ${auth.token}`}
         ).then(() => {
-            history.push('/')
+            history.push('/all-places')
         })
     }
 
@@ -79,7 +83,7 @@ const NewPlace = () => {
                     element="input" 
                     id="address"
                     label="Address" 
-                    errorText="Please enter a valid description address."
+                    errorText="Please enter a valid address."
                     validators={[VALIDATOR_REQUIRE()]}
                     onInput={inputHandler} />
                 <ImageUpload id="image" onInput={inputHandler} errorText="Please provide an image." />

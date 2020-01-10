@@ -28,12 +28,20 @@ const UpdatePlace = () => {
         description: {
             value: '',
             isValid: false
+        },
+        address: {
+            value: '',
+            isValid: false
         }
     }, false)
 
     useEffect(() => {
+        document.title = "Mein Kampfang - Update Place"
+    }, [])
+
+    useEffect(() => {
         const fetchPlace = () => {
-            sendRequest(`http://localhost:5000/api/places/${placeId}`).then((responseData) => {
+            sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`).then((responseData) => {
                 setLoadedPlace(responseData.place)
                 setFormData({
                     title: {
@@ -41,8 +49,12 @@ const UpdatePlace = () => {
                         isValid: true
                     },
                     description: {
-                        value: responseData.place.description,
+                        value: responseData.place.description.join('\n\n'),
                         isValid: true
+                    },
+                    address: {
+                        value: responseData.place.address,
+                        isValid: false
                     }
                 }, true)
             })
@@ -53,11 +65,12 @@ const UpdatePlace = () => {
     const placeUpdateSubmit = event => {
         event.preventDefault()
         sendRequest(
-            `http://localhost:5000/api/places/${placeId}`,
+            `${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`,
             'PATCH',
             JSON.stringify({
                 title: formState.inputs.title.value,
-                description: formState.inputs.description.value
+                description: formState.inputs.description.value.split('\n').filter(desc => desc !== "").map(des => des + '/29omaewa'),
+                address: formState.inputs.address.value
             }),
             {'Content-Type': 'application/json', Authorization: `Bearer ${auth.token}`}
         ).then(() => {
@@ -105,7 +118,17 @@ const UpdatePlace = () => {
                     errorText="Please enter a valid description (at least 5 characters)."
                     validators={[VALIDATOR_MINLENGTH(5)]}
                     onInput={inputHandler}
-                    value={loadedPlace.description}
+                    value={loadedPlace.description.join('\n\n')}
+                    valid={true} />
+
+                <Input 
+                    element="input" 
+                    id="address"
+                    label="Address" 
+                    errorText="Please enter a valid address."
+                    validators={[VALIDATOR_REQUIRE()]}
+                    onInput={inputHandler}
+                    value={loadedPlace.address}
                     valid={true} />
                 <Button type="submit" disabled={!formState.isValid}>Update Place</Button>
             </form>

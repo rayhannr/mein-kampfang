@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import './Auth.css'
 
 import Card from '../../shared/components/UI/Card'
@@ -29,6 +29,10 @@ const Auth = () => {
         }
     }, false)
 
+    useEffect(() => {
+        document.title = `Mein Kampfang - ${isLogin ? 'Login' : 'Signup'}`
+    }, [isLogin])
+
     const switchMode = () => {
         if(!isLogin){
             setFormData({
@@ -56,7 +60,7 @@ const Auth = () => {
         event.preventDefault()
         if(isLogin){
             sendRequest(
-                'http://localhost:5000/api/users/login', 
+                `${process.env.REACT_APP_BACKEND_URL}/users/login`, 
                 'POST',
                 JSON.stringify({
                     email: formState.inputs.email.value,
@@ -73,7 +77,7 @@ const Auth = () => {
             formData.append('password', formState.inputs.password.value)
             formData.append('image', formState.inputs.image.value)
             sendRequest(
-                'http://localhost:5000/api/users/signup',
+                `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
                 'POST',
                 formData
             ).then((responseData) => {

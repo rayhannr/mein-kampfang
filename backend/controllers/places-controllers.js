@@ -10,7 +10,7 @@ const User = require('../models/user')
 const getPlaces = async (req, res, next) => {
   let places
   try {
-    places = await Place.find({})
+    places = await Place.find({}).sort({'_id': -1})
   } catch (err) {
     const error = new HttpError(
       'Fetching places failed, please try again later.',
@@ -52,7 +52,7 @@ const getPlacesByUserId = async (req, res, next) => {
   // let places
   let places
   try {
-    places = await Place.find({creator: userId})
+    places = await Place.find({creator: userId}).sort({'_id': -1})
   } catch (err) {
     const error = new HttpError(
       'Fetching places failed, please try again later.',
@@ -78,7 +78,9 @@ const createPlace = async (req, res, next) => {
     )
   }
 
-  const { title, description, address} = req.body
+  const { title, description, address } = req.body
+  const descriptionArray = description.split('/29omaewa,').map(des => des.replace('/29omaewa', ''))
+  descriptionArray[descriptionArray.length-1] = descriptionArray[descriptionArray.length-1].replace('/29omaewa', '')
 
   let coordinates
   try {
@@ -89,7 +91,7 @@ const createPlace = async (req, res, next) => {
 
   const createdPlace = new Place({
     title,
-    description,
+    description: descriptionArray,
     address,
     location: coordinates,
     image: req.file.path,
@@ -111,8 +113,6 @@ const createPlace = async (req, res, next) => {
     const error = new HttpError('Could not find the user for the provided id.', 404)
     return next(error)
   }
-
-  console.log(user)
 
   try {
     const sess = await mongoose.startSession()
@@ -140,7 +140,8 @@ const updatePlace = async (req, res, next) => {
     )
   }
 
-  const { title, description } = req.body
+  const { title, description, address } = req.body
+  const descriptionArray = description.map(des => des.replace('/29omaewa', ''))
   const placeId = req.params.pid
 
   let place
@@ -163,7 +164,8 @@ const updatePlace = async (req, res, next) => {
   }
 
   place.title = title
-  place.description = description
+  place.description = descriptionArray
+  place.address = address
 
   try {
     await place.save()

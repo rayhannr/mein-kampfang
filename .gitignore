@@ -2,4 +2,5 @@ backend/uploads/images/
 *.jpg
 *.png
 *jpeg
+frontend/.env
 backend/nodemon.json

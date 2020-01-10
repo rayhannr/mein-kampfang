@@ -16,7 +16,11 @@ const PlaceItem = props => {
     const auth = useContext(AuthContext)
     const [showMap, setShowMap] = useState(false)
     const [showConfirmModal, setShowConfirmModal] = useState(false)
+    const [showMore, setShowMore] = useState(false)
 
+    const showMoreToggle = () => {
+        setShowMore(prev => !prev)
+    }
     const openMap = () => setShowMap(true)
     const closeMap = () => setShowMap(false)
     const showDeleteWarning = () => setShowConfirmModal(true)
@@ -24,7 +28,7 @@ const PlaceItem = props => {
     const confirmDelete = () => {
         setShowConfirmModal(false)
         sendRequest(
-            `http://localhost:5000/api/places/${props.id}`,
+            `${process.env.REACT_APP_BACKEND_URL}/places/${props.id}`,
             'DELETE',
             null,
             {
@@ -67,14 +71,18 @@ const PlaceItem = props => {
                 <Card className="place-item__content">
                     {isLoading && <LoadingSpinner asOverlay />}
                     <div className="place-item__image">
-                        <img src={`http://localhost:5000/${props.image}`} alt={props.title} />
+                        <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt={props.title} />
                     </div>
                     <div className="place-item__info">
                         <h1>{props.title}</h1>
                         <p className="info-title">Address</p>
                         <p>{props.address}</p>
                         <p className="info-title">Description</p>
-                        <p>{props.description}</p>
+                        {!showMore ? 
+                            <p>{`${props.description[0]}`} </p> :
+                            props.description.map(desc => <p key={desc.substring(0, Math.floor(desc.length/2))}>{desc}</p>)
+                        }
+                        {props.description.length > 1 && <Button onClick={showMoreToggle}>{!showMore ? 'Show more' : 'Show less'}</Button> }
                     </div>
                     <div className="place-item__actions">
                         <Button inverse onClick={openMap}>View on Map</Button>

@@ -11,12 +11,16 @@ const Users = () => {
 
     useEffect(() => {
         const fetchUsers = () => {
-            sendRequest('http://localhost:5000/api/users').then((responseData) => {
+            sendRequest(`${process.env.REACT_APP_BACKEND_URL}/users`).then((responseData) => {
                 setLoadedUsers(responseData.users)
             })
         }
         fetchUsers()
     }, [sendRequest])
+
+    useEffect(() => {
+        document.title = "Mein Kampfang"
+    }, [])
 
     return (
         <React.Fragment>

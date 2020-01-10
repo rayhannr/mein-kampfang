@@ -14,8 +14,9 @@ const PlaceDetail = () => {
     const {isLoading, error, sendRequest, clearError} = useHttpClient()
 
     useEffect(() => {
-        sendRequest(`http://localhost:5000/api/places/${placeId}`).then((responseData) => {
+        sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`).then((responseData) => {
             setLoadedPlace(responseData.place)
+            document.title = `Mein Kampfang - ${responseData.place.title}`
         })
     }, [placeId, sendRequest])
 

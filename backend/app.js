@@ -36,7 +36,7 @@ app.use((error, req, res, next) => {
   //karena ini middleware untuk error handling, if ini untuk hapus image dari storage kalau gagal signup
   if(req.file){
     fs.unlink(req.file.path, () => {
-      console.log(err)
+      console.log(error)
     }) //delete the file yang ada di req body
   }
   if (res.headerSent) {
@@ -47,7 +47,7 @@ app.use((error, req, res, next) => {
 })
 
 mongoose
-  .connect(`mongodb+srv://rayhannr:yIwlqf9PNVtKHhXH@cluster0-f1yfj.mongodb.net/mern?retryWrites=true&w=majority`)
+  .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-f1yfj.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`)
   .then(() => {
     app.listen(5000)
   })
