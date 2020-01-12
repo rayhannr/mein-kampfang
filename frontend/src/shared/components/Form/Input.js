@@ -24,8 +24,10 @@ const Input = props => {
     const [inputState, dispatch] = useReducer(inputReducer, {
         value: props.value || '', 
         isValid: props.valid || false, 
-        isTouched: false
+        isTouched: false,
     })
+
+    let isFilled = inputState.value.length > 0
 
     const{id, onInput} = props
     const{value, isValid} = inputState
@@ -60,9 +62,11 @@ const Input = props => {
 
     return(
         <div className={`form-control ${!inputState.isValid && inputState.isTouched && 'form-control--invalid'}`}>
-            <label htmlFor={props.id}>{props.label}</label>
             {element}
-            {!inputState.isValid && inputState.isTouched && <p>{props.errorText} </p>}
+            <span className="highlight"></span>
+            <span className="bar"></span>
+            <label htmlFor={props.id} className={isFilled ? 'is-filled' : undefined }>{props.label}</label>
+            {!inputState.isValid && inputState.isTouched && <p className="form-control__error">{props.errorText} </p>}
         </div>
     )
 }

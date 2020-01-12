@@ -1,43 +1,112 @@
 .form-control {
-  margin: 1rem 0;
+  position: relative;
+  margin-bottom: 32px;
 }
 
-.form-control label,
-.form-control input,
-.form-control textarea {
+.form-control input, .form-control textarea {
+  font-size: 15px;
+  padding: 10px 10px 10px 5px;
+  width: 100%;
   display: block;
+  border: none;
+  border-bottom: 1px solid #3a7575;
+  background: transparent;
+  font-family: 'Circular Std Book';
+}
+
+.form-control input:focus, .form-control textarea:focus {
+  outline: none;
+  border-bottom-color: transparent;
 }
 
 .form-control label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  font-size: 14px;
+  color: #3a7575;
+  font-size: 15px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
-.form-control input,
-.form-control textarea {
+.form-control input:focus ~ label, .form-control textarea:focus ~ label, .form-control label.is-filled {
+  top: -20px;
+  font-size: 13px;
+  color: #4764E6;
+}
+
+.form-control .bar {
+  position: relative;
+  display: block;
   width: 100%;
-  font: inherit;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  background: #f8f8f8;
-  padding: 0.15rem 0.25rem;
 }
 
-.form-control input:focus,
-.form-control textarea:focus {
-  outline: none;
-  background: #ebebeb;
-  border-color: #510077;
+.form-control .bar::before {
+  left: 50%;
 }
 
-.form-control--invalid label,
-.form-control--invalid p {
-  color: red;
+.form-control .bar::after {
+  right: 50%;
 }
 
-.form-control--invalid input,
-.form-control--invalid textarea {
-  border-color: red;
-  background: #ffd1d1;
+.form-control .bar::before, .form-control .bar::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #4764E6;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
+
+.form-control input:focus ~ .bar:before,
+.form-control input:focus ~ .bar:after,
+.form-control textarea:focus ~ .bar:before,
+.form-control textarea:focus ~ .bar:after {
+  width: 50%;
+}
+
+.form-control .highlight {
+  position: absolute;
+  height: 60%;
+  width: 50px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.form-control .form-control__error {
+  color: #292929;
+}
+
+.form-control input:focus ~ .highlight, .form-control textarea:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #4764E6;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #4764E6;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/*# sourceMappingURL=Input.css.map */

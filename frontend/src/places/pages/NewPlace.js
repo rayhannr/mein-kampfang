@@ -86,8 +86,10 @@ const NewPlace = () => {
                     errorText="Please enter a valid address."
                     validators={[VALIDATOR_REQUIRE()]}
                     onInput={inputHandler} />
-                <ImageUpload id="image" onInput={inputHandler} errorText="Please provide an image." />
-                <Button type="submit" disabled={!formState.isValid}>Add Place</Button>
+                <ImageUpload id="image" onInput={inputHandler} center errorText="Please provide an image." />
+                <div style={{textAlign: 'right', paddingTop: '30px'}}>
+                    <Button type="submit" disabled={!formState.isValid} style={{position: 'absolute', right: '20px', bottom: '20px'}}>Add Place</Button>
+                </div>
             </form>
         </React.Fragment>
     )

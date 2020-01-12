@@ -10,6 +10,10 @@ const Users = () => {
     const [loadedUsers, setLoadedUsers] = useState()
 
     useEffect(() => {
+        document.title = "Mein Kampfang - Users"
+    }, [])
+
+    useEffect(() => {
         const fetchUsers = () => {
             sendRequest(`${process.env.REACT_APP_BACKEND_URL}/users`).then((responseData) => {
                 setLoadedUsers(responseData.users)
@@ -17,10 +21,6 @@ const Users = () => {
         }
         fetchUsers()
     }, [sendRequest])
-
-    useEffect(() => {
-        document.title = "Mein Kampfang"
-    }, [])
 
     return (
         <React.Fragment>

@@ -10,7 +10,7 @@ const Places = () => {
     const [loadedPlaces, setLoadedPlaces] = useState()
 
     useEffect(() => {
-        document.title = "Mein Kampfang - All Places"
+        document.title = "Mein Kampfang"
     }, [])
 
     useEffect(() => {

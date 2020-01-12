@@ -1,0 +1,58 @@
+@import '../../util/variables';
+
+.modal {
+    z-index: 100;
+    position: fixed;
+    top: 22vh;
+    left: 10%;
+    width: 80%;
+    background: color(main-color);
+    box-shadow: 12px 12px 20px -10px shadow(neumorphic-shadow-bottom), -10px -10px 16px 0 shadow(neumorphic-shadow-top);
+    border-radius: 25px;
+  }
+  
+  .modal__header {
+    width: 100%;
+    padding: .7rem;
+    background: color(accent-color);
+    color: color(main-color);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+    h3{
+        margin: 0.5rem;
+    }
+  }
+  
+  .modal__content, .modal__footer {
+    padding: 1rem 0.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .modal {
+      left: calc(50% - 20rem);
+      width: 40rem;
+    }
+  }
+  
+  .modal-enter {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+  
+  .modal-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 200ms;
+  }
+  
+  .modal-exit {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .modal-exit-active {
+    transform: translateY(-10rem);
+    opacity: 0;
+    transition: all 200ms;
+  }

@@ -3,9 +3,15 @@
   height: 3rem;
   background: transparent;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-right: 2rem;
   cursor: pointer;
 }
@@ -14,16 +20,16 @@
   display: block;
   width: 2.5rem;
   height: 2.5px;
-  background: white;
+  background: #4764E6;
 }
 
 .main-navigation__title {
-  color: white;
+  color: #4764E6;
 }
 
 .main-navigation__title a {
   text-decoration: none;
-  color: white;
+  color: #4764E6;
 }
 
 .main-navigation__header-nav {
@@ -38,8 +44,8 @@
   .main-navigation__menu-btn {
     display: none;
   }
-
   .main-navigation__header-nav {
     display: block;
   }
 }
+/*# sourceMappingURL=MainNavigation.css.map */

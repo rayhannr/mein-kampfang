@@ -1,0 +1,11 @@
+@import '../../util/variables';
+
+.card {
+    position: relative;
+    margin: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1rem;
+    background: color(main-color);
+    box-shadow: 18px 18px 30px -10px shadow(neumorphic-shadow-bottom), -16px -16px 24px 0px shadow(neumorphic-shadow-top);
+  }  

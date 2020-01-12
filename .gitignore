@@ -3,4 +3,5 @@ backend/uploads/images/
 *.png
 *jpeg
 frontend/.env
+frontend/.env.production
 backend/nodemon.json

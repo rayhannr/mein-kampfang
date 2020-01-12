@@ -6,37 +6,43 @@ import './Button.css';
 const Button = props => {
   if (props.href) {
     return (
-      <a
-        className={`button button--${props.size || 'default'} ${props.inverse &&
-          'button--inverse'} ${props.danger && 'button--danger'}`}
-        href={props.href}
-      >
-        {props.children}
-      </a>
+      <div className="neumorphic" style={props.style}>
+        <a
+          className={`button button--${props.size || 'default'} ${props.inverse &&
+            'button--inverse'} ${props.danger && 'button--danger'}`}
+          href={props.href}
+        >
+          {props.children}
+        </a>
+      </div>
     );
   }
   if (props.to) {
     return (
-      <Link
-        to={props.to}
-        exact={props.exact}
-        className={`button button--${props.size || 'default'} ${props.inverse &&
-          'button--inverse'} ${props.danger && 'button--danger'}`}
-      >
-        {props.children}
-      </Link>
+      <div className="neumorphic" style={props.style}>
+        <Link
+          to={props.to}
+          exact={props.exact}
+          className={`button button--${props.size || 'default'} ${props.inverse &&
+            'button--inverse'} ${props.danger && 'button--danger'}`}
+        >
+          {props.children}
+        </Link>
+      </div>
     );
   }
   return (
-    <button
-      className={`button button--${props.size || 'default'} ${props.inverse &&
-        'button--inverse'} ${props.danger && 'button--danger'}`}
-      type={props.type}
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
-      {props.children}
-    </button>
+    <div className="neumorphic" style={props.style}>
+      <button
+        className={`button button--${props.size || 'default'} ${props.inverse &&
+          'button--inverse'} ${props.danger && 'button--danger'}`}
+        type={props.type}
+        onClick={props.onClick}
+        disabled={props.disabled}
+      >
+        {props.children}
+      </button>
+    </div>
   );
 };
 

@@ -1,9 +1,11 @@
 .card {
   position: relative;
   margin: 0;
-  box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
+  border-radius: 15px;
   overflow: hidden;
-  background: white;
   padding: 1rem;
+  background: #F1F3FF;
+  -webkit-box-shadow: 18px 18px 30px -10px rgba(205, 207, 217, 0.6), -16px -16px 24px 0px rgba(255, 255, 255, 0.6);
+          box-shadow: 18px 18px 30px -10px rgba(205, 207, 217, 0.6), -16px -16px 24px 0px rgba(255, 255, 255, 0.6);
 }
+/*# sourceMappingURL=Card.css.map */

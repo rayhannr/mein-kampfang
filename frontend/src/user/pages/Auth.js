@@ -93,7 +93,7 @@ const Auth = () => {
                 {isLoading && <LoadingSpinner asOverlay />}
                 <h2>{isLogin ? 'Login' : 'Signup'}</h2>
                 <hr />
-                <form onSubmit={authSubmit}>
+                <form onSubmit={authSubmit} style={{paddingTop: '35px'}}>
                     {!isLogin && 
                         <Input
                             element="input"

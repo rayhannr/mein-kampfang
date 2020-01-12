@@ -1,10 +1,12 @@
-.side-drawer{
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    height: 100vh;
-    width: 70%;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,.26);
+.side-drawer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: 70%;
+  background: #F1F3FF;
+  -webkit-box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
+          box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
 }
+/*# sourceMappingURL=SideDrawer.css.map */

@@ -1,56 +1,67 @@
+.neumorphic {
+  padding: 5px;
+  background: #F1F3FF;
+  display: inline-block;
+  border-radius: 30px;
+  -webkit-box-shadow: 10px 10px 20px -10px rgba(205, 207, 217, 0.6), -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
+          box-shadow: 10px 10px 20px -10px rgba(205, 207, 217, 0.6), -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
+  border-color: #F1F3FF;
+}
+
+.neumorphic:hover {
+  -webkit-box-shadow: inset 10px 10px 20px -10px rgba(205, 207, 217, 0.6), inset -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
+          box-shadow: inset 10px 10px 20px -10px rgba(205, 207, 217, 0.6), inset -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
+}
+
 .button {
   font: inherit;
   font-size: 13px;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #ff0055;
-  border-radius: 4px;
-  background: #ff0055;
+  border: 1px solid #4764E6;
+  border-radius: 30px;
+  background: #4764E6;
   color: white;
   cursor: pointer;
-  margin-right: 1rem;
   text-decoration: none;
   display: inline-block;
 }
 
 .button:focus {
-  outline: none;
+  outline: auto;
 }
 
-.button:hover,
-.button:active {
-  background: #ff4382;
-  border-color: #ff4382;
+.button:hover, .button:active {
+  background: #657ce2;
+  border-color: #657ce2;
+}
+
+.button:disabled, .button:disabled:hover, .button:disabled:active {
+  background: rgba(71, 100, 230, 0.75);
+  color: #fceded;
+  border-color: rgba(71, 100, 230, 0.75);
+  cursor: not-allowed;
 }
 
 .button--inverse {
-  background: transparent;
-  color: #ff0055;
+  background: #F1F3FF;
+  color: #4764E6;
+  border-color: #F1F3FF;
 }
 
-.button--inverse:hover,
-.button--inverse:active {
-  color: white;
-  background: #ff0055;
+.button--inverse:hover, .button--inverse:active {
+  color: #4764E6;
+  background: #F1F3FF;
+  border-color: #F1F3FF;
 }
 
 .button--danger {
-  background: #830000;
-  border-color: #830000;
+  background: #292929;
+  border-color: #292929;
 }
 
-.button--danger:hover,
-.button--danger:active {
-  background: #f34343;
-  border-color: #f34343;
-}
-
-.button:disabled,
-.button:hover:disabled,
-.button:active:disabled {
-  background: #ccc;
-  color: #979797;
-  border-color: #ccc;
-  cursor: not-allowed;
+.button--danger:hover, .button--danger:active {
+  background: #811717;
+  border-color: #811717;
 }
 
 .button--small {
@@ -60,3 +71,4 @@
 .button--big {
   font-size: 14px;
 }
+/*# sourceMappingURL=Button.css.map */

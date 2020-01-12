@@ -3,9 +3,12 @@
   list-style: none;
   margin: 0 auto;
   padding: 1rem;
+  padding-top: 35px;
   width: 90%;
   max-width: 40rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
+          box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
   border-radius: 6px;
-  background: white;
+  background: #F1F3FF;
 }
+/*# sourceMappingURL=PlaceForm.css.map */

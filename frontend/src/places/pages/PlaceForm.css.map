@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,WAAW,CAAC;EACR,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,IAAI;EACjB,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,IAAI,CAAC,IAAI,CAAC,IAAI,CAAE,KAAI,CCKN,wBAAwB,EDLkB,KAAI,CAAE,KAAI,CAAC,IAAI,CAAC,CAAC,CCM9D,wBAAwB;EDL/C,aAAa,EAAE,GAAG;EAClB,UAAU,ECXE,OAAO;CDYpB",
+    "sources": [
+        "PlaceForm.scss",
+        "../../shared/util/_variables.scss"
+    ],
+    "names": [],
+    "file": "PlaceForm.css"
+}

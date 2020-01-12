@@ -85,8 +85,8 @@ const PlaceItem = props => {
                         {props.description.length > 1 && <Button onClick={showMoreToggle}>{!showMore ? 'Show more' : 'Show less'}</Button> }
                     </div>
                     <div className="place-item__actions">
-                        <Button inverse onClick={openMap}>View on Map</Button>
-                        {auth.userId === props.creatorId && <Button to={`/places/${props.id}`}>Edit</Button>}
+                        <Button inverse onClick={openMap} style={{marginRight: '1rem'}}>View on Map</Button>
+                        {auth.userId === props.creatorId && <Button to={`/places/${props.id}`} style={{marginRight: '1rem'}}>Edit</Button>}
                         {auth.userId === props.creatorId && <Button danger onClick={showDeleteWarning}>Delete</Button>}
                     </div>
                 </Card>

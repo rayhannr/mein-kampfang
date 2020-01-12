@@ -62,6 +62,10 @@ const UpdatePlace = () => {
         fetchPlace()
     }, [sendRequest, placeId, setFormData])
 
+    useEffect(() => {
+        console.log(formState)
+    }, [formState])
+
     const placeUpdateSubmit = event => {
         event.preventDefault()
         sendRequest(
@@ -130,7 +134,10 @@ const UpdatePlace = () => {
                     onInput={inputHandler}
                     value={loadedPlace.address}
                     valid={true} />
-                <Button type="submit" disabled={!formState.isValid}>Update Place</Button>
+                    
+                <div style={{textAlign: 'right', paddingTop: '30px'}}>
+                    <Button type="submit" disabled={!formState.isValid} style={{position: 'absolute', right: '20px', bottom: '20px'}}>Update Place</Button>
+                </div>
             </form>
             } 
         </React.Fragment>
