@@ -1,25 +1,27 @@
+@import '../../util/variables.css';
+
 .neumorphic {
   padding: 5px;
-  background: #F1F3FF;
+  background: var(--mainColor);
   display: inline-block;
   border-radius: 30px;
-  -webkit-box-shadow: 10px 10px 20px -10px rgba(205, 207, 217, 0.6), -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
-          box-shadow: 10px 10px 20px -10px rgba(205, 207, 217, 0.6), -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
-  border-color: #F1F3FF;
+  -webkit-box-shadow: 10px 10px 20px -10px var(--neumorphicShadowBottom), -8px -8px 16px 0px var(--neumorphicShadowTop);
+          box-shadow: 10px 10px 20px -10px var(--neumorphicShadowBottom), -8px -8px 16px 0px var(--neumorphicShadowTop);
+  border-color: var(--mainColor);
 }
 
 .neumorphic:hover {
-  -webkit-box-shadow: inset 10px 10px 20px -10px rgba(205, 207, 217, 0.6), inset -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
-          box-shadow: inset 10px 10px 20px -10px rgba(205, 207, 217, 0.6), inset -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: inset 10px 10px 20px -10px var(--neumorphicShadowBottom), inset -8px -8px 16px 0px var(--neumorphicShadowTop);
+          box-shadow: inset 10px 10px 20px -10px var(--neumorphicShadowBottom), inset -8px -8px 16px 0px var(--neumorphicShadowTop);
 }
 
 .button {
   font: inherit;
   font-size: 13px;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #4764E6;
+  border: 1px solid var(--accentColor);
   border-radius: 30px;
-  background: #4764E6;
+  background: var(--accentColor);
   color: white;
   cursor: pointer;
   text-decoration: none;
@@ -27,41 +29,41 @@
 }
 
 .button:focus {
-  outline: auto;
+  outline: none;
 }
 
 .button:hover, .button:active {
-  background: #657ce2;
-  border-color: #657ce2;
+  background: var(--accentHover);
+  border-color: var(--accentHover);
 }
 
 .button:disabled, .button:disabled:hover, .button:disabled:active {
-  background: rgba(71, 100, 230, 0.75);
-  color: #fceded;
-  border-color: rgba(71, 100, 230, 0.75);
+  background: var(--disabled);
+  color: var(--disabledText);
+  border-color: var(--disabled);
   cursor: not-allowed;
 }
 
 .button--inverse {
-  background: #F1F3FF;
-  color: #4764E6;
-  border-color: #F1F3FF;
+  background: var(--mainColor);
+  color: var(--accentColor);
+  border-color: var(--mainColor);
 }
 
 .button--inverse:hover, .button--inverse:active {
-  color: #4764E6;
-  background: #F1F3FF;
-  border-color: #F1F3FF;
+  color: var(--accentColor);
+  background: var(--mainColor);
+  border-color: var(--mainColor);
 }
 
 .button--danger {
-  background: #292929;
-  border-color: #292929;
+  background: var(--dangerButton);
+  border-color: var(--dangerButton);
 }
 
 .button--danger:hover, .button--danger:active {
-  background: #811717;
-  border-color: #811717;
+  background: var(--dangerHover);
+  border-color: var(--dangerHover);
 }
 
 .button--small {

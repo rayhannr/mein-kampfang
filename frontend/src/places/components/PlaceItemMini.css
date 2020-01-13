@@ -1,12 +1,12 @@
 @import '../../shared/util/variables.css';
 
-.user-item {
+.place-mini-item {
   margin: 1rem;
   width: calc(20% - 2rem);
   min-width: 17.5rem;
 }
 
-.user-item a {
+.place-mini-item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,42 +20,42 @@
   color: var(--danger);
 }
 
-.user-item a:hover, .user-item a:active {
+.place-mini-item a:hover, .place-mini-item a:active {
   background: var(--accentColor);
 }
 
-.user-item .user-item__content {
+.place-mini-item .place-mini-item__content {
   padding: 0;
 }
 
-.user-item .user-item__content:hover {
+.place-mini-item .place-mini-item__content:hover {
   -webkit-box-shadow: 18px 18px 30px -10px var(--blueShadowBottom), -16px -16px 24px 0px var(--blueShadowTop);
           box-shadow: 18px 18px 30px -10px var(--blueShadowBottom), -16px -16px 24px 0px var(--blueShadowTop);
 }
 
-.user-item .user-item__image {
+.place-mini-item .place-mini-item__image {
   width: 4rem;
   height: 4rem;
   margin-right: 1rem;
 }
 
-.user-item .user-item__info h3 {
+.place-mini-item .place-mini-item__info h3 {
   margin: 0 0 0.5rem 0;
   font-weight: normal;
   color: var(--accentColor);
 }
 
-.user-item:hover h3,
-.user-item:active h3 {
+.place-mini-item:hover h3,
+.place-mini-item:active h3 {
   color: #e2edff;
 }
 
-.user-item:hover h4,
-.user-item:active h4 {
+.place-mini-item:hover h4,
+.place-mini-item:active h4 {
   color: var(--mainColor);
 }
 
-.user-item .user-item__info h4 {
+.place-mini-item .place-mini-item__info h4 {
   margin: 0;
 }
 /*# sourceMappingURL=UserItem.css.map */

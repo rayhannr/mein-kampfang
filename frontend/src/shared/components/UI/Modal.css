@@ -1,22 +1,28 @@
+@import '../../util/variables.css';
+
 .modal {
   z-index: 100;
   position: fixed;
   top: 22vh;
   left: 10%;
   width: 80%;
-  background: #F1F3FF;
-  -webkit-box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
-          box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
+  background: var(--mainColor);
+  -webkit-box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
+          box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
   border-radius: 25px;
 }
 
 .modal__header {
   width: 100%;
   padding: .7rem;
-  background: #4764E6;
-  color: #F1F3FF;
+  background: var(--accentColor);
+  color: var(--mainColor);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+}
+
+.modal__content{
+  color: var(--danger);
 }
 
 .modal__header h3 {

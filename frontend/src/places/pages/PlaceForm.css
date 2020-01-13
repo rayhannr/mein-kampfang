@@ -1,3 +1,5 @@
+@import '../../shared/util/variables.css';
+
 .place-form {
   position: relative;
   list-style: none;
@@ -6,9 +8,9 @@
   padding-top: 35px;
   width: 90%;
   max-width: 40rem;
-  -webkit-box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
-          box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
+          box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
   border-radius: 6px;
-  background: #F1F3FF;
+  background: var(--mainColor);
 }
 /*# sourceMappingURL=PlaceForm.css.map */

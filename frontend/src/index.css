@@ -1,4 +1,5 @@
 @import url('shared/fonts/fonts.css');
+@import './shared/util/variables.css';
 
 * {
   box-sizing: border-box;
@@ -14,7 +15,8 @@ h1,h2,h3,h4,h5,h6{
 
 body {
   margin: 0;
-  background: #F1F3FF;
+  background: var(--mainColor);
+  transition: .05s ease-in;
 }
 
 p{

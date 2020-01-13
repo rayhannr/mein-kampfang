@@ -1,12 +1,14 @@
+@import '../../util/variables.css';
+
 .lds-dual-ring {
   display: inline-block;
   width: 64px;
   height: 64px;
-  background: #F1F3FF;
+  background: var(--mainColor);
   padding: 2px;
   border-radius: 50%;
-  -webkit-box-shadow: 9px 9px 15px -10px rgba(205, 207, 217, 0.6), -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
-          box-shadow: 9px 9px 15px -10px rgba(205, 207, 217, 0.6), -8px -8px 16px 0px rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 9px 9px 15px -10px var(--neumorphicShadowBottom), -8px -8px 16px 0px var(--neumorphicShadowTop);
+          box-shadow: 9px 9px 15px -10px var(--neumorphicShadowBottom), -8px -8px 16px 0px var(--neumorphicShadowTop);
 }
 
 .lds-dual-ring::after {
@@ -16,8 +18,8 @@
   height: 46px;
   margin: 1px;
   border-radius: 50%;
-  border: 5px solid #4764E6;
-  border-color: #4764E6 transparent #4764E6 transparent;
+  border: 5px solid var(--accentColor);
+  border-color: var(--accentColor) transparent var(--accentColor) transparent;
   -webkit-animation: lds-dual-ring 1.2s linear infinite;
           animation: lds-dual-ring 1.2s linear infinite;
 }
@@ -28,7 +30,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(241, 243, 255, 0.8);
+  background: var(--mainColorOverlay);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,3 +1,5 @@
+@import '../../util/variables.css';
+
 .main-header {
   width: 100%;
   height: 4rem;
@@ -10,9 +12,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #F1F3FF;
-  -webkit-box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
-          box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
+  background: var(--mainColor);
+  -webkit-box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
+          box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
   padding: 0 1rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;

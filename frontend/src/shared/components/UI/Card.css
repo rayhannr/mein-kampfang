@@ -1,11 +1,13 @@
+@import '../../util/variables.css';
+
 .card {
   position: relative;
   margin: 0;
   border-radius: 15px;
   overflow: hidden;
-  padding: 1rem;
-  background: #F1F3FF;
-  -webkit-box-shadow: 18px 18px 30px -10px rgba(205, 207, 217, 0.6), -16px -16px 24px 0px rgba(255, 255, 255, 0.6);
-          box-shadow: 18px 18px 30px -10px rgba(205, 207, 217, 0.6), -16px -16px 24px 0px rgba(255, 255, 255, 0.6);
+  padding: 1.5rem;
+  color: var(--danger);
+  background: var(--mainColor);
+  -webkit-box-shadow: 18px 18px 30px -10px var(--neumorphicShadowBottom), -16px -16px 24px 0px var(--neumorphicShadowTop);
+          box-shadow: 18px 18px 30px -10px var(--neumorphicShadowBottom), -16px -16px 24px 0px var(--neumorphicShadowTop);
 }
-/*# sourceMappingURL=Card.css.map */

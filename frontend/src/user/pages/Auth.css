@@ -1,3 +1,5 @@
+@import '../../shared/util/variables.css';
+
 .authentication__header {
   color: white;
   text-align: center;
@@ -6,12 +8,12 @@
 .authentication {
   width: 90%;
   max-width: 25rem;
-  margin: 7rem auto;
+  margin: 7rem auto !important;
   text-align: center;
 }
 
 .authentication h2{
-  color: #4764E6;
+  color: var(--accentColor);
 }
 
 .authentication form {

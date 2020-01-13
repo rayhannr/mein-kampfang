@@ -1,4 +1,5 @@
 import React from 'react'
+import './PlaceItemMiniList.css'
 
 import PlaceItemMini from './PlaceItemMini'
 import Card from '../../shared/components/UI/Card'
@@ -9,7 +10,7 @@ const PlaceItemMiniList = props => {
             <h2>No places found.</h2>
         </Card> :
 
-        <ul className="users-list">
+        <ul className="place-mini-list">
             {props.items.map(place => (
                 <PlaceItemMini 
                     key={place.id} 

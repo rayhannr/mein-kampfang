@@ -12,7 +12,7 @@ const getUsers = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Fetching users failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }
@@ -34,7 +34,7 @@ const signup = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Signing up failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }
@@ -51,7 +51,7 @@ const signup = async (req, res, next) => {
   try {
     hashPassword = await bcrypt.hash(password, 12)
   } catch(err) {
-    const error = new HttpError('Could not create user, please try again', 500)
+    const error = new HttpError('Could not create user, please try again', 404)
     return next(error)
   }
 
@@ -68,7 +68,7 @@ const signup = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Signing up failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }
@@ -82,7 +82,7 @@ const signup = async (req, res, next) => {
   } catch(err){
     const error = new HttpError(
       'Signing up failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }
@@ -100,7 +100,7 @@ const login = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Loggin in failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }
@@ -117,7 +117,7 @@ const login = async (req, res, next) => {
   try {
     isValidPassword = await bcrypt.compare(password, existingUser.password)
   } catch (err) {
-    const error = new HttpError('Could not log you in, please check your credentials and try again', 500)
+    const error = new HttpError('Could not log you in, please check your credentials and try again', 404)
     return next(error)
   }
 
@@ -138,7 +138,7 @@ const login = async (req, res, next) => {
   } catch(err){
     const error = new HttpError(
       'Logging in failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }

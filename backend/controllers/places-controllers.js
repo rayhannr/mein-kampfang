@@ -14,7 +14,7 @@ const getPlaces = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Fetching places failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }
@@ -30,7 +30,7 @@ const getPlaceById = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Something went wrong, could not find a place.',
-      500
+      404
     )
     return next(error)
   }
@@ -56,7 +56,7 @@ const getPlacesByUserId = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Fetching places failed, please try again later.',
-      500
+      404
     )
     return next(error)
   }
@@ -104,7 +104,7 @@ const createPlace = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Creating place failed, please try again.',
-      500
+      404
     )
     return next(error)
   }
@@ -124,7 +124,7 @@ const createPlace = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Creating place failed, please try again.',
-      500
+      404
     )
     return next(error)
   }
@@ -150,7 +150,7 @@ const updatePlace = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Something went wrong, could not update place.',
-      500
+      404
     )
     return next(error)
   }
@@ -172,7 +172,7 @@ const updatePlace = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Something went wrong, could not update place.',
-      500
+      404
     )
     return next(error)
   }
@@ -189,7 +189,7 @@ const deletePlace = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Something went wrong, could not delete place.',
-      500
+      404
     )
     return next(error)
   }
@@ -219,7 +219,7 @@ const deletePlace = async (req, res, next) => {
   } catch (err) {
     const error = new HttpError(
       'Something went wrong, could not delete place.',
-      500
+      404
     )
     return next(error)
   }

@@ -1,3 +1,5 @@
+@import '../../shared/util/variables.css';
+
 .place-item {
   margin: 3rem 0;
 }
@@ -14,7 +16,7 @@
   text-align: center;
   margin-top: 10px;
   margin-bottom: 1rem;
-  color: #4764E6;
+  color: var(--accentColor);
 }
 
 .place-item__info .info-title {
@@ -22,7 +24,7 @@
   margin-bottom: 2px;
   font-size: 13px;
   font-family: 'Circular Std Bold';
-  color: #4764E6;
+  color: var(--accentColor);
 }
 
 .place-item__info h2, .place-item__info h3, .place-item__info p {
@@ -33,6 +35,7 @@
   text-align: justify;
   line-height: 22px;
   margin-bottom: 20px;
+  color: var(--danger);
 }
 
 .place-item__image {
@@ -53,7 +56,7 @@
 .place-item__actions {
   padding: 1rem 2.7rem;
   text-align: right;
-  border-top: 1px solid #cbbcbc;
+  border-top: 1px solid var(--borderColor);
 }
 
 .place-item__modal-content {
@@ -64,8 +67,8 @@
   text-align: right;
 }
 
-.place-item__modal-actions button, .place-item__modal-actions a {
-  margin: 0.5rem;
+.place-item__modal-actions .neumorphic, .place-item__modal-actions a {
+  margin-right: 0.5rem;
 }
 
 .map-container {

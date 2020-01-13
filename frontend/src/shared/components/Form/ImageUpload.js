@@ -55,7 +55,7 @@ const ImageUpload = props => {
                 </div>
                 <Button type="button" onClick={pickImage} inverse>Pick Image</Button>
             </div>
-            {!isValid && <p style={{textAlign: 'center'}}>{props.errorText}</p>}
+            {!isValid && <p style={{textAlign: 'center'}} className="image-upload__error">{props.errorText}</p>}
         </div>
     )
 }

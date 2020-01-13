@@ -62,10 +62,6 @@ const UpdatePlace = () => {
         fetchPlace()
     }, [sendRequest, placeId, setFormData])
 
-    useEffect(() => {
-        console.log(formState)
-    }, [formState])
-
     const placeUpdateSubmit = event => {
         event.preventDefault()
         sendRequest(

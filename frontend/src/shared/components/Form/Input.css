@@ -1,3 +1,5 @@
+@import '../../util/variables.css';
+
 .form-control {
   position: relative;
   margin-bottom: 32px;
@@ -9,9 +11,10 @@
   width: 100%;
   display: block;
   border: none;
-  border-bottom: 1px solid #3a7575;
+  border-bottom: 1px solid var(--inputLabel);
   background: transparent;
   font-family: 'Circular Std Book';
+  color: var(--danger);
 }
 
 .form-control input:focus, .form-control textarea:focus {
@@ -20,7 +23,7 @@
 }
 
 .form-control label {
-  color: #3a7575;
+  color: var(--inputLabel);
   font-size: 15px;
   font-weight: normal;
   position: absolute;
@@ -35,7 +38,7 @@
 .form-control input:focus ~ label, .form-control textarea:focus ~ label, .form-control label.is-filled {
   top: -20px;
   font-size: 13px;
-  color: #4764E6;
+  color: var(--accentColor);
 }
 
 .form-control .bar {
@@ -58,7 +61,7 @@
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #4764E6;
+  background: var(--accentColor);
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -82,7 +85,7 @@
 }
 
 .form-control .form-control__error {
-  color: #292929;
+  color: var(--danger);
 }
 
 .form-control input:focus ~ .highlight, .form-control textarea:focus ~ .highlight {
@@ -92,7 +95,7 @@
 
 @-webkit-keyframes inputHighlighter {
   from {
-    background: #4764E6;
+    background: var(--accentColor);
   }
   to {
     width: 0;
@@ -102,7 +105,7 @@
 
 @keyframes inputHighlighter {
   from {
-    background: #4764E6;
+    background: var(--accentColor);
   }
   to {
     width: 0;

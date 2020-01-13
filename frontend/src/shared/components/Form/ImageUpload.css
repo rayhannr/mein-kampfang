@@ -1,3 +1,5 @@
+@import '../../util/variables.css';
+
 .image-upload.center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,7 +19,8 @@
 .image-upload__preview {
   width: 13rem;
   height: 13rem;
-  border: 1px solid #cbbcbc;
+  border: 1px solid var(--borderColor);
+  border-radius: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,5 +39,9 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.image-upload__preview p, .image-upload__error{
+    color: var(--danger);
 }
 /*# sourceMappingURL=ImageUpload.css.map */

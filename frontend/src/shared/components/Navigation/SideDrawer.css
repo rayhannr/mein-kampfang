@@ -1,3 +1,5 @@
+@import '../../util/variables.css';
+
 .side-drawer {
   position: fixed;
   left: 0;
@@ -5,8 +7,8 @@
   z-index: 1000;
   height: 100vh;
   width: 70%;
-  background: #F1F3FF;
-  -webkit-box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
-          box-shadow: 12px 12px 20px -10px rgba(205, 207, 217, 0.6), -10px -10px 16px 0 rgba(255, 255, 255, 0.6);
+  background: var(--mainColor);
+  -webkit-box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
+          box-shadow: 12px 12px 20px -10px var(--neumorphicShadowBottom), -10px -10px 16px 0 var(--neumorphicShadowTop);
 }
 /*# sourceMappingURL=SideDrawer.css.map */
